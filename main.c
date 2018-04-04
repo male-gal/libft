@@ -6,7 +6,7 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 14:13:05 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/03 20:47:32 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/04 18:02:37 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ printf("ISASCII :\nattendu : ''%d, %d, %d'' - obtenu : ''%d, %d, %d''\n", isasci
 printf("ISPRINT :\nattendu : ''%d, %d, %d'' - obtenu : ''%d, %d, %d''\n", isprint(48), isprint(70), isprint(42), ft_isprint(48), ft_isprint(70), ft_isprint(42));
 printf("TO UPPER :\nattendu : ''%d, %d, %d'' - obtenu : ''%d, %d, %d''\n", toupper(57), toupper(114), toupper(122), ft_toupper(57), ft_toupper(114), ft_toupper(122));
 printf("TO LOWER :\nattendu : ''%d, %d, %d'' - obtenu : ''%d, %d, %d''\n", tolower(75), tolower(84), tolower(42), ft_tolower(75), ft_tolower(84), ft_tolower(42));
+
+// =========================================== STRINGS ============================================== //
+printf("\nSTRINGS\n\n");
+
+
 printf("STRCMP :\nattendu : ''%d, %d'' - obtenu : ''%d, %d''\n", strcmp("ABCde*f", "ABCde*f"), strcmp("ABcDeF", "ABCDEF"), ft_strcmp("ABCde*f", "ABCde*f"), ft_strcmp("ABcDeF", "ABCDEF"));
 printf("STRNCMP :\nattendu : ''%d, %d'' - obtenu : ''%d, %d''\n", strncmp("ABCde*f", "ABCde*f", 3), strncmp("ABcDeF", "ABCDEF", 5), ft_strncmp("ABCde*f", "ABCde*f", 3), ft_strncmp("ABcDeF", "ABCDEF", 5));
 printf("%s\n", strchr("lol cest du fun ici 42", '4'));
@@ -33,9 +38,30 @@ printf("STRCHR :\nattendu : ''%s'' - obtenu : ''%s''\n", strchr("lol c'est du fu
 printf("STRrCHR :\nattendu : ''%s'' - obtenu : ''%s''\n", strrchr("lo c'est du fun ici a 42 42 42 42\0", '2'), ft_strrchr("lo c'est du fun ici a 42 42 42 42\0", '2'));
 printf("STRSTR :\nattendu : ''%s'' - obtenu : ''%s''\n", strstr("lo c'est du fun ici a 42 42 42 42\0", "ici"), ft_strstr("lo c'est du fun ici a 42 42 42 42\0", "ici"));
 printf("STRnSTR :\nattendu : ''%s'' - obtenu : ''%s''\n", strnstr("ABCDEFGHIJ", "E", 5), ft_strnstr("ABCDEFGHIJ", "E", 5));
+char *s1 = "ABCDEFG";
+char *s2 = (char *)malloc(sizeof(char) * 30);
+printf("STRCPY :\nattendu : ''%s'' - obtenu : ''%s''\n", strcpy(s1, s2), ft_strcpy(s1, s2));
+
+// ========================================== MEMOIRE =============================================== //
+
+printf("\nMEMORY - Attention, le contenu ci dessous a ete lu par la fonction ft_readmem.\n\n");
+
 printf("MEMCMP :\nattendu : ''%d'' - obtenu : ''%d''\n", memcmp("ABCDEFGHIJ", "ABCD", 3), ft_memcmp("ABCDEFGHIJ", "ABCD", 3));
+printf("MEMCHR :\nattendu : ''%s'' - obtenu : ''%s''\n", ft_readmem(memchr("ABCDEFGHIJ", 'D', 5)), ft_readmem(ft_memchr("ABCDEFGHIJ", 'D', 5)));
 
+char *str;
+char *str2;
 
+str = (char *)malloc(sizeof(char) * 11);
+str2 = (char *)malloc(sizeof(char) * 11);
+printf("MEMSET :\nattendu : ''%s'' - obtenu : ''%s''\n", ft_readmem(memset( str, 'w', 10)), ft_readmem(ft_memset( str2, 'w', 10)));
+
+bzero( str, 10);
+ft_bzero( str2, 10);
+printf("BZERO :\nattendu : ''%s'' - obtenu : ''%s''\n", str, str2);
+printf("MEMCPY :\nattendu : ''%s'' - obtenu : ''%s''\n", ft_readmem(memcpy( str, "abcdefgh", 4)), ft_readmem(ft_memcpy( str2, "abcdefgh", 4)));
+printf("MEMcCPY :\nattendu : ''%s'' - obtenu : ''%s''\n", ft_readmem(memccpy( str, "ABCDEFGH", 'C', 7)), ft_readmem(ft_memccpy( str2, "ABCDEFGH", 'C', 7)));
+printf("MEMMOVE :\nattendu : ''%s'' - obtenu : ''%s''\n", ft_readmem(memmove( str, "abcdefgh", 4)), ft_readmem(ft_memmove( str2, "abcdefgh", 4)));
 
 
 return (0);
