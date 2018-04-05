@@ -6,7 +6,7 @@
 #    By: male-gal <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/14 16:10:15 by male-gal          #+#    #+#              #
-#    Updated: 2018/04/05 21:51:19 by male-gal         ###   ########.fr        #
+#    Updated: 2018/04/05 21:54:34 by male-gal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ $(NAME):
 	ar -rc $(NAME) ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 
 clean:
-	-rm -f ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o	
+	-rm -f *.o	
 
 fclean : clean
 	-rm -f $(NAME)
