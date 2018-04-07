@@ -6,7 +6,7 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 20:31:10 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/04 20:40:23 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 16:48:17 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr(char const *s)
 	size_t i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		ft_putchar(s[i]);
 		i++;

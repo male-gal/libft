@@ -6,13 +6,13 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 22:26:10 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/04 22:50:27 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 18:59:36 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	get_len(int n)
+static int	get_len(int n)
 {
 	int i;
 

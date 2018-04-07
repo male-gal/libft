@@ -6,7 +6,7 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/04 22:39:54 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/04 22:54:59 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 18:33:37 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	if ((out = (char *)malloc(size)) == 0)
+	if ((out = (char *)ft_memalloc(size + 1)) == 0)
 		return (NULL);
 	while (i < size)
 	{

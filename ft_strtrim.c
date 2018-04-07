@@ -6,7 +6,7 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/05 21:28:33 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/05 21:30:11 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 18:58:01 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,18 @@
 
 char	*ft_strtrim(char const *s)
 {
-	int		i;
-	int		len;
-	char	*out;
+	size_t	i;
+	size_t	len;
 
+	i = 0;
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s);
-	while (s[len - 1] == ' ' || s[len - 1] == '\t' || s[len - 1] == '\n')
+	while ((s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+		i++;
+	if (s[i] == '\0')
+		return (ft_strdup(s + i));
+	len = ft_strlen(s) - 1;
+	while ((s[len] == ' ' || s[len] == '\t' || s[len] == '\n') && len > 0)
 		len--;
-	i = -1;
-	while (s[++i] == ' ' || s[i] == '\t' || s[i] == '\n')
-		len--;
-	if (len <= 0)
-		len = 0;
-	if((out = (char*)malloc(sizeof(char) * (len + 1))) == 0)
-		return (NULL);
-	s += i;
-	i = 0;
-	while (i++ <= len)
-		out[i--] = *s++;
-	out[i--] = '\0';
-	return (out);
+	return (ft_strsub(s, i, len - i + 1));
 }

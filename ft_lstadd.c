@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/04/04 21:42:45 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/07 16:48:45 by male-gal         ###   ########.fr       */
+/*   Created: 2018/04/07 22:04:17 by male-gal          #+#    #+#             */
+/*   Updated: 2018/04/07 22:04:49 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+void		ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
+	return ;
 }

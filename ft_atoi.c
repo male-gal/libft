@@ -6,24 +6,24 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 15:07:04 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/03 15:16:15 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 19:02:07 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	int		ct;
-	long	nb;
-	int		neg;
+	long long		ct;
+	unsigned long	nb;
+	int				neg;
 
 	nb = 0;
 	ct = 0;
-	neg = 0;
+	neg = 1;
 	while (nptr[ct] == ' ' || nptr[ct] == '\t' || nptr[ct] == '\r'
 			|| nptr[ct] == '\f' || nptr[ct] == '\v' || nptr[ct] == '\n')
 		ct++;
 	if (nptr[ct] == '-')
-		neg = 1;
+		neg = -1;
 	if (nptr[ct] == '-' || nptr[ct] == '+')
 		ct++;
 	while (nptr[ct] >= 48 && nptr[ct] <= 57)
@@ -32,8 +32,7 @@ int	ft_atoi(const char *nptr)
 		nb += nptr[ct] - 48;
 		ct++;
 	}
-	if (neg == 1)
-		return (-nb);
-	else
-		return (nb);
+	if (nb > 9223372036854775807)
+		return (neg == -1 ? 0 : -1);
+	return (nb * neg);
 }

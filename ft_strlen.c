@@ -6,7 +6,7 @@
 /*   By: male-gal <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 13:47:59 by male-gal          #+#    #+#             */
-/*   Updated: 2018/04/03 14:38:59 by male-gal         ###   ########.fr       */
+/*   Updated: 2018/04/07 16:43:42 by male-gal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 		i++;
 	return (i);
 }
